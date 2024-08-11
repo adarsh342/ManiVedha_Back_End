@@ -75,7 +75,7 @@ treatments = [
 def home():
     return "Welcome to the Health API!"
 
-@app.route('/get-disease-info', methods=['POST'])
+@app.route('/get_disease_info', methods=['POST'])
 def get_disease_info():
     data = request.json
     symptoms_input = data.get('symptoms', '').strip().lower()  # Ensure input is a string
