@@ -78,7 +78,7 @@ def home():
 @app.route('/get-disease-info', methods=['POST'])
 def get_disease_info():
     data = request.json
-    symptoms_input = data.get('symptoms').lower()
+    symptoms_input = data.get('symptoms', '').strip().lower()  # Ensure input is a string
 
     if not symptoms_input:
         return jsonify({"error": "No symptoms provided."}), 400
